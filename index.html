@@ -17,13 +17,14 @@
 
   <body>
     <div class="header">
-      <h1 class="header__title">Cookbook</h1>
+      <h1>Cookbook</h1>
     </div>
 
-    <div class="main">
-      <ul class="recipe-list" ng-controller="RecipesCtrl">
-        <li ng-repeat="recipe in recipes">{{recipe}}</li>
-      </ul>
+    <div class="group">
+      <nav class="recipe-list" ng-controller="RecipesCtrl">
+        <h2>My Recipes</h2>
+        <a ng-repeat="recipe in recipes" href="#">{{recipe}}</a>
+      </nav>
     </div>
   </body>
 </html>
