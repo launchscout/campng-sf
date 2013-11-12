@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="cookbook">
+  <head>
+    <title>CampNg - Cookbook App</title>
+
+    <!-- Vendor Code -->
+    <script type="text/javascript" src="vendor/jquery.js"></script>
+    <script type="text/javascript" src="vendor/angular.js"></script>
+
+    <!-- Application Code -->
+    <script type="text/javascript" src="app/js/application.js"></script>
+    <script type="text/javascript" src="app/js/controllers.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="vendor/normalize.css">
+    <link rel="stylesheet" type="text/css" href="app/css/application.css">
+  </head>
+
+  <body>
+    <div class="header">
+      <h1 class="header__title">Cookbook</h1>
+    </div>
+
+    <div class="main">
+      <ul class="recipe-list" ng-controller="RecipesCtrl">
+        <li ng-repeat="recipe in recipes">{{recipe}}</li>
+      </ul>
+    </div>
+  </body>
+</html>

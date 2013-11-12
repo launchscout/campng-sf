@@ -1,0 +1,30 @@
+body{
+  width: 960px;
+  margin: 10px auto;
+}
+
+.header{
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.main{
+  clear: both;
+}
+
+.recipe-list li{
+  list-style: none;
+}
+
+/* Utilities */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
