@@ -3,7 +3,7 @@
 ## List all labs
 
 ```
-git tags
+git tag
 ```
 
 ## Checkout a lab
