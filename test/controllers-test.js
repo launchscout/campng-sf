@@ -5,9 +5,13 @@ describe("RecipesCtrl", function() {
     this.controller = $controller("RecipesCtrl", {$scope: this.scope})
   }));
 
-  describe("recipe", function() {
-    it("is Pancakes", function() {
-      expect(this.scope.recipe).toEqual("Pancakes");
+  describe("recipes", function() {
+    it("is an array of 3 recipes", function() {
+      expect(this.scope.recipes.length).toEqual(3);
+    });
+
+    it("first element is pancakes", function(){
+      expect(this.scope.recipes[0]).toEqual("Pancakes");
     });
   });
 });

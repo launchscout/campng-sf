@@ -23,7 +23,7 @@
     <div class="group">
       <nav class="recipe-list" ng-controller="RecipesCtrl">
         <h2>My Recipes</h2>
-        <a href="#">{{recipe}}</a>
+        <a ng-repeat="recipe in recipes" href="#">{{recipe}}</a>
       </nav>
     </div>
   </body>

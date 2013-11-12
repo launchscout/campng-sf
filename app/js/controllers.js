@@ -3,5 +3,5 @@
 //////////////////////////
 
 angular.module("cookbook").controller("RecipesCtrl", function($scope) {
-  $scope.recipe = "Pancakes"
+  $scope.recipes = []
 });
