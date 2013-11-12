@@ -5,9 +5,9 @@ describe("RecipesCtrl", function() {
     this.controller = $controller("RecipesCtrl", {$scope: this.scope})
   }));
 
-  describe("recipes", function() {
-    it("is an array of 3 recipes", function() {
-      expect(this.scope.recipes.length).toEqual(3);
+  describe("recipe", function() {
+    it("is Pancakes", function() {
+      expect(this.scope.recipe).toEqual("Pancakes");
     });
   });
 });
