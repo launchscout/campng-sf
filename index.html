@@ -24,7 +24,7 @@
     <div class="group" ng-controller="RecipesCtrl">
       <nav class="recipe-list">
         <h2>My Recipes</h2>
-        <a ng-repeat="recipe in recipes" href="#">{{recipe.title}}</a>
+        <a ng-repeat="recipe in recipes" ng-click="showRecipe(recipe)" href="#">{{recipe.title}}</a>
       </nav>
       <section class="detail">
         <h1>{{currentRecipe.title}}</h1>
