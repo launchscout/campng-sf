@@ -10,6 +10,7 @@
     <!-- Application Code -->
     <script type="text/javascript" src="app/js/application.js"></script>
     <script type="text/javascript" src="app/js/controllers.js"></script>
+    <script type="text/javascript" src="app/js/factories.js"></script>
 
     <link rel="stylesheet" type="text/css" href="vendor/normalize.css">
     <link rel="stylesheet" type="text/css" href="app/css/application.css">
@@ -23,7 +24,7 @@
     <div class="group">
       <nav class="recipe-list" ng-controller="RecipesCtrl">
         <h2>My Recipes</h2>
-        <a ng-repeat="recipe in recipes" href="#">{{recipe}}</a>
+        <a ng-repeat="recipe in recipes" href="#">{{recipe.title}}</a>
       </nav>
     </div>
   </body>

@@ -9,9 +9,5 @@ describe("RecipesCtrl", function() {
     it("is an array of 3 recipes", function() {
       expect(this.scope.recipes.length).toEqual(3);
     });
-
-    it("first element is pancakes", function(){
-      expect(this.scope.recipes[0]).toEqual("Pancakes");
-    });
   });
 });
