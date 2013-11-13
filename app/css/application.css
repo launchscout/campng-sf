@@ -54,6 +54,12 @@ h1, h2, h3{
   background: #F5F5F5;
 }
 
+.detail{
+  width: 70%;
+  float: left;
+  padding: 0 10px;
+}
+
 .group:before,
 .group:after {
     content: " ";
