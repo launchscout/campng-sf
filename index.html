@@ -21,11 +21,15 @@
       <h1>Cookbook</h1>
     </div>
 
-    <div class="group">
-      <nav class="recipe-list" ng-controller="RecipesCtrl">
+    <div class="group" ng-controller="RecipesCtrl">
+      <nav class="recipe-list">
         <h2>My Recipes</h2>
         <a ng-repeat="recipe in recipes" href="#">{{recipe.title}}</a>
       </nav>
+      <section class="detail">
+        <h1>{{currentRecipe.title}}</h1>
+        <p>{{currentRecipe.description}}</p>
+      </section>
     </div>
   </body>
 </html>

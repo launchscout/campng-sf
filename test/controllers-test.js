@@ -10,4 +10,14 @@ describe("RecipesCtrl", function() {
       expect(this.scope.recipes.length).toEqual(3);
     });
   });
+
+  describe("showRecipe", function() {
+    beforeEach(function(){
+      this.scope.showRecipe(this.scope.recipes[0])
+    });
+    
+    it("sets the currenctRecipe", function() {
+      expect(this.scope.currentRecipe).toEqual(this.scope.recipes[0]);
+    });
+  });
 });
