@@ -22,6 +22,12 @@ angular.module("cookbook").factory("Recipe", function() {
           description: ""
         }
       ]
+    },
+    find: function(id){
+      var allRecipes = this.all();
+      for (var i = 0; i < allRecipes.length; i++){
+        if (allRecipes[i].id == id){ return allRecipes[i]; }
+      }
     }
   }
 
