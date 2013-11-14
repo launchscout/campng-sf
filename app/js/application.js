@@ -2,4 +2,4 @@
 // Application Module
 //////////////////////////
 
-angular.module("cookbook", []);
+angular.module("cookbook", ["ngRoute"]);

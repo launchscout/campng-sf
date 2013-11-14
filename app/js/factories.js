@@ -7,14 +7,17 @@ angular.module("cookbook").factory("Recipe", function() {
     all: function(){
       return [
         {
+          id: 1,
           title: "Pancakes",
           description: "big and fluffy"
         },
         {
+          id: 2,
           title: "Waffles",
           description: ""
         },
         {
+          id: 3,
           title: "Chicken",
           description: ""
         }

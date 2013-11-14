@@ -14,4 +14,15 @@ describe("Recipe", function() {
       expect(this.recipes[0].description).toEqual("big and fluffy");
     });
   });
+
+  describe("find", function() {
+    beforeEach(inject(function(Recipe) {
+      this.recipe = Recipe.find(1)
+    }));
+
+    it("returns the first element", function(){
+      expect(this.recipe.title).toEqual("Pancakes");
+      expect(this.recipe.description).toEqual("big and fluffy");
+    });
+  });
 });

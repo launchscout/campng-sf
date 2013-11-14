@@ -6,11 +6,13 @@
     <!-- Vendor Code -->
     <script type="text/javascript" src="vendor/jquery.js"></script>
     <script type="text/javascript" src="vendor/angular.js"></script>
+    <script type="text/javascript" src="vendor/angular-route.js"></script>
 
     <!-- Application Code -->
     <script type="text/javascript" src="app/js/application.js"></script>
     <script type="text/javascript" src="app/js/controllers.js"></script>
     <script type="text/javascript" src="app/js/factories.js"></script>
+    <script type="text/javascript" src="app/js/routes.js"></script>
 
     <link rel="stylesheet" type="text/css" href="vendor/normalize.css">
     <link rel="stylesheet" type="text/css" href="app/css/application.css">
@@ -24,12 +26,16 @@
     <div class="group" ng-controller="RecipesCtrl">
       <nav class="recipe-list">
         <h2>My Recipes</h2>
-        <a ng-repeat="recipe in recipes" ng-click="showRecipe(recipe)" href="#">{{recipe.title}}</a>
+        <a ng-repeat="recipe in recipes" href="#recipes/{{recipe.id}}">{{recipe.title}}</a>
       </nav>
       <section class="detail">
-        <h1>{{currentRecipe.title}}</h1>
-        <p>{{currentRecipe.description}}</p>
+        <ng-view/>
       </section>
     </div>
+
+    <script id="recipe-detail-template" type="text/template">
+      <h1>{{currentRecipe.title}}</h1>
+      <p>{{currentRecipe.description}}</p>
+    </script>
   </body>
 </html>
