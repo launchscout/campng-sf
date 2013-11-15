@@ -39,5 +39,19 @@
       <h1>{{currentRecipe.title}}</h1>
       <p>{{currentRecipe.description}}</p>
     </script>
+
+    <script id="recipe-new-template" type="text/template">
+      <form ng-submit="submit()">
+        <p>
+          <label>Title</label>
+          <input ng-model="currentRecipe.title"></input>
+        </p>
+        <p>
+          <label>Description</label>
+          <textarea ng-model="currentRecipe.description"></textarea>
+        </p>
+        <button type="submit">Submit</button>
+      </form>
+    </script>
   </body>
 </html>
