@@ -21,7 +21,7 @@ describe("Recipe", function() {
     beforeEach(inject(function(Recipe, $httpBackend) {
       var fakeRecipe = { title: "Pancakes", description: "big and fluffy" }
       $httpBackend.when('GET', '/recipes/1').respond(fakeRecipe);
-      this.recipe = Recipe.find(1);
+      this.recipe = Recipe.find({ id: 1 });
       $httpBackend.flush();
     }));
 

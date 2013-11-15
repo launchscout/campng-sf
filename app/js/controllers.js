@@ -7,5 +7,5 @@ angular.module("cookbook").controller("RecipesCtrl", function($scope, Recipe) {
 });
 
 angular.module("cookbook").controller("RecipeDetailCtrl", function($scope, $routeParams, Recipe) {
-  $scope.currentRecipe = Recipe.find($routeParams.recipeId)
+  $scope.currentRecipe = Recipe.find({id: $routeParams.recipeId })
 });
