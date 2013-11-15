@@ -30,3 +30,19 @@ describe("RecipeDetailCtrl", function() {
     });
   });
 });
+
+describe("RecipeNewCtrl", function() {
+  beforeEach(inject(function($controller) {
+    this.scope = {}
+    this.controller = $controller("RecipeNewCtrl", {$scope: this.scope})
+  }));
+
+  describe("currentRecipe", function() {
+    it("is the first recipe", inject(function($httpBackend) {
+      $httpBackend.expect('POST', '/recipes', {title: "Test"}).respond("cool")
+      this.scope.currentRecipe.title = "Test"
+      this.scope.submit()
+      $httpBackend.flush()
+    }));
+  });
+});

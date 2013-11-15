@@ -30,6 +30,7 @@
         <a ng-repeat="recipe in recipes" href="#recipes/{{recipe.id}}">{{recipe.title}}</a>
       </nav>
       <section class="detail">
+        <a href="#/recipes/new" class="button">New Recipe</a>
         <ng-view/>
       </section>
     </div>

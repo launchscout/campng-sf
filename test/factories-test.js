@@ -30,4 +30,12 @@ describe("Recipe", function() {
       expect(this.recipe.description).toEqual("big and fluffy");
     });
   });
+
+  describe("create", function() {
+    it("Posts to /recipes", inject(function(Recipe, $httpBackend) {
+      $httpBackend.expect('POST', '/recipes', {title: "Test"}).respond("cool");
+      Recipe.create(new Recipe({title: "Test"}));
+      $httpBackend.flush()
+    }));
+  });
 });

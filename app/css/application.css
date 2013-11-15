@@ -12,9 +12,21 @@ a{
   color: #428BCA;
 }
 
+label{
+  display: block;
+}
+
 h1, h2, h3{
   font-weight: normal;
   margin-top: 0
+}
+
+.button{
+  display: inline-block;
+  background: #F5F5F5;
+  border: 1px solid #ddd;
+  padding: 5px;
+  float: right;
 }
 
 .header{
