@@ -2,14 +2,14 @@
 // Factories
 //////////////////////////
 
-angular.module("cookbook").factory("Recipe", function() {
-
+angular.module("cookbook").factory("Recipe", function($resource) {
+  var recipeResource = $resource('/recipes/:id', { id: '@id' });
   var recipes = {
     all: function(){
-      return []
+      return recipeResource.query()
     },
     find: function(id){
-      return {}
+      return recipeResource.get({id: id})
     }
   }
 
