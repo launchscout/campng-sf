@@ -11,3 +11,10 @@ git tag
 ```
 git checkout lab5
 ```
+
+## Running a server
+Make sure to have [node.js](http://nodejs.org/) installed
+
+```
+node server.js
+```

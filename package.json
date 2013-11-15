@@ -1,0 +1,20 @@
+{
+  "name": "CampNg",
+  "version": "0.0.1",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gaslight/campng-sf.git"
+  },
+  "dependencies": {
+    "express": "> 3.4.0"
+  },
+  "author": "Gaslight",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/gaslight/campng-sf/issues"
+  }
+}
