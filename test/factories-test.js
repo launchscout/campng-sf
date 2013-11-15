@@ -1,10 +1,12 @@
 describe("Recipe", function() {
   describe("all", function() {
-    
-    beforeEach(inject(function(Recipe) {
-      this.recipes = Recipe.all()
+    beforeEach(inject(function(Recipe, $httpBackend) {
+      var fakeRecipes = [{ title: "Pancakes", description: "big and fluffy" }, {}, {}]
+      $httpBackend.when('GET', '/recipes').respond(fakeRecipes);
+      this.recipes = Recipe.all();
+      $httpBackend.flush();
     }));
-    
+
     it("is an array of 3 recipes", function() {
       expect(this.recipes.length).toEqual(3);
     });
@@ -16,8 +18,11 @@ describe("Recipe", function() {
   });
 
   describe("find", function() {
-    beforeEach(inject(function(Recipe) {
-      this.recipe = Recipe.find(1)
+    beforeEach(inject(function(Recipe, $httpBackend) {
+      var fakeRecipe = { title: "Pancakes", description: "big and fluffy" }
+      $httpBackend.when('GET', '/recipes/1').respond(fakeRecipe);
+      this.recipe = Recipe.find(1);
+      $httpBackend.flush();
     }));
 
     it("returns the first element", function(){
