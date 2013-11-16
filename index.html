@@ -24,9 +24,10 @@
       <h1>Cookbook</h1>
     </div>
 
-    <div class="group" ng-controller="RecipesCtrl">
-      <nav class="recipe-list">
+    <div class="group">
+      <nav class="recipe-list" ng-controller="RecipesCtrl">
         <h2>My Recipes</h2>
+        <input placeholder="search..."/>
         <a ng-repeat="recipe in recipes" href="#recipes/{{recipe.id}}">{{recipe.title}}</a>
       </nav>
       <section class="detail">

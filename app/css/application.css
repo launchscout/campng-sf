@@ -56,6 +56,14 @@ h1, h2, h3{
   border-bottom: 1px solid #ddd;
 }
 
+.recipe-list input{
+  display: block;
+  margin: 10px auto;
+  padding: 3px 10px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+
 .recipe-list a{
   display: block;
   padding: 10px;
