@@ -37,8 +37,8 @@ describe("RecipeNewCtrl", function() {
     this.controller = $controller("RecipeNewCtrl", {$scope: this.scope})
   }));
 
-  describe("currentRecipe", function() {
-    it("is the first recipe", inject(function($httpBackend) {
+  describe("submit", function() {
+    it("posts the recipe to /recipes", inject(function($httpBackend) {
       $httpBackend.expect('POST', '/recipes', {title: "Test"}).respond("cool")
       this.scope.currentRecipe.title = "Test"
       this.scope.submit()
