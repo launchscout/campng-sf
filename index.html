@@ -14,6 +14,7 @@
     <script type="text/javascript" src="app/js/controllers.js"></script>
     <script type="text/javascript" src="app/js/factories.js"></script>
     <script type="text/javascript" src="app/js/routes.js"></script>
+    <script type="text/javascript" src="app/js/directives.js"></script>
 
     <link rel="stylesheet" type="text/css" href="vendor/normalize.css">
     <link rel="stylesheet" type="text/css" href="app/css/application.css">
@@ -28,7 +29,10 @@
       <nav class="recipe-list" ng-controller="RecipesCtrl">
         <h2>My Recipes</h2>
         <input ng-model="query.title" placeholder="search..."/>
-        <a ng-repeat="recipe in recipes | filter:query" href="#recipes/{{recipe.id}}">{{recipe.title}}</a>
+        <a ng-repeat="recipe in recipes | filter:query" href="#recipes/{{recipe.id}}">
+          <span>{{recipe.title}}</span>
+          <rating value="recipe.rating"/>
+        </a>
       </nav>
       <section class="detail">
         <a href="#/recipes/new" class="button">New Recipe</a>
@@ -45,6 +49,8 @@
           {{ingredient.title}}
         </li>
       </ul>
+      <h3>Rating:</h3>
+      <rating value="currentRecipe.rating"/>
     </script>
 
     <script id="recipe-new-template" type="text/template">
@@ -70,6 +76,10 @@
         <p>
           <input ng-model="newIngredient.title"/>
           <a class="icon" ng-click="addIngredient(newIngredient)">+</a>
+        </p>
+        <p>
+          <label>Rating <rating value="currentRecipe.rating"/></label>
+          <input ng-model="currentRecipe.rating" type="range" min="0" max="5" step="0.1">
         </p>
         <button type="submit">Submit</button>
       </form>

@@ -7,6 +7,7 @@ var recipes = [
     "id": 1,
     "title": "Pancakes",
     "description": "big and fluffy",
+    "rating": 4.5,
     "ingredients": [
       {
         title: "flour",
@@ -23,12 +24,14 @@ var recipes = [
     "id": 2,
     "title": "Waffles",
     "description": "",
+    "rating": 4,
     "ingredients": []
   },
   {
     "id": 3,
     "title": "Chicken",
     "description": "",
+    "rating": 3,
     "ingredients": []
   }
 ]
@@ -59,6 +62,7 @@ app.post('/recipes', function(req, res){
     id: recipes.length + 1,
     title: req.body.title,
     description: req.body.description,
+    rating: req.body.rating,
     ingredients: req.body.ingredients
   }
   recipes.push(recipe)
