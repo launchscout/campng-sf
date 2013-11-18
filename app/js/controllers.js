@@ -14,6 +14,16 @@ angular.module("cookbook").controller("RecipeNewCtrl", function($scope, $locatio
   $scope.currentRecipe = new Recipe({ ingredients: [] });
   $scope.newIngredient = {};
 
+  $scope.addIngredient = function(ingredient){
+    $scope.currentRecipe.ingredients.push(ingredient);
+    $scope.newIngredient = {};
+  }
+
+  $scope.removeIngredient = function(ingredient){
+    index = $scope.currentRecipe.ingredients.indexOf(ingredient)
+    $scope.currentRecipe.ingredients.splice(index, 1);
+  }
+
   $scope.submit = function(){
     Recipe.create($scope.currentRecipe).then(function(){
       $location.path( "/recipes" );

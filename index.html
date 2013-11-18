@@ -62,14 +62,14 @@
           <label>Ingredients</label>
           <ul>
             <li ng-repeat="ingredient in currentRecipe.ingredients">
-              <a class="icon" ng-click="">-</a>
+              <a class="icon" ng-click="removeIngredient(ingredient)">-</a>
               <span>{{ingredient.title}}</span>
             </li>
           </ul>
         </p>
         <p>
           <input ng-model="newIngredient.title"/>
-          <a class="icon" ng-click="">+</a>
+          <a class="icon" ng-click="addIngredient(newIngredient)">+</a>
         </p>
         <button type="submit">Submit</button>
       </form>
