@@ -6,17 +6,30 @@ var recipes = [
   {
     "id": 1,
     "title": "Pancakes",
-    "description": "big and fluffy"
+    "description": "big and fluffy",
+    "ingredients": [
+      {
+        title: "flour",
+      },
+      {
+        title: "eggs",
+      },
+      {
+        title: "blueberries",
+      }
+    ]
   },
   {
     "id": 2,
     "title": "Waffles",
-    "description": ""
+    "description": "",
+    "ingredients": []
   },
   {
     "id": 3,
     "title": "Chicken",
-    "description": ""
+    "description": "",
+    "ingredients": []
   }
 ]
 
@@ -45,7 +58,8 @@ app.post('/recipes', function(req, res){
   recipe = {
     id: recipes.length + 1,
     title: req.body.title,
-    description: req.body.description
+    description: req.body.description,
+    ingredients: req.body.ingredients
   }
   recipes.push(recipe)
   console.log("Recipe created: ", recipe)

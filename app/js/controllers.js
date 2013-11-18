@@ -11,7 +11,8 @@ angular.module("cookbook").controller("RecipeDetailCtrl", function($scope, $rout
 });
 
 angular.module("cookbook").controller("RecipeNewCtrl", function($scope, $location, Recipe) {
-  $scope.currentRecipe = new Recipe()
+  $scope.currentRecipe = new Recipe({ ingredients: [] });
+  $scope.newIngredient = {};
 
   $scope.submit = function(){
     Recipe.create($scope.currentRecipe).then(function(){
