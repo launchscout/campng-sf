@@ -10,6 +10,10 @@ angular.module("cookbook").directive('rating', function() {
         percentage = scope.value * 20;
         $('.mask', element).width(percentage + "%");
       }
+      updateRating();
+      scope.$watch('value', function(value) {
+        updateRating();
+      });
     }
   };
 });
