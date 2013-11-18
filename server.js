@@ -1,21 +1,38 @@
 var express = require('express');
 var app = express();
+app.use(express.bodyParser());
 
 var recipes = [
   {
     "id": 1,
     "title": "Pancakes",
-    "description": "big and fluffy"
+    "description": "big and fluffy",
+    "rating": 4.5,
+    "ingredients": [
+      {
+        title: "flour",
+      },
+      {
+        title: "eggs",
+      },
+      {
+        title: "blueberries",
+      }
+    ]
   },
   {
     "id": 2,
     "title": "Waffles",
-    "description": ""
+    "description": "",
+    "rating": 4,
+    "ingredients": []
   },
   {
     "id": 3,
     "title": "Chicken",
-    "description": ""
+    "description": "",
+    "rating": 3,
+    "ingredients": []
   }
 ]
 
@@ -43,16 +60,20 @@ app.get('/recipes/:id', function(req, res){
 app.post('/recipes', function(req, res){
   recipe = {
     id: recipes.length + 1,
-    title: req.params.title,
-    description: req.params.description
+    title: req.body.title,
+    description: req.body.description,
+    rating: req.body.rating,
+    ingredients: req.body.ingredients
   }
   recipes.push(recipe)
+  console.log("Recipe created: ", recipe)
   res.send(recipe);
 });
 
 app.del('/recipes/:id', function(req, res){
   recipe = findRecipe(req.params.id)
   if (recipe) {
+    console.log("Recipe deleted: ", recipe)
     recipes.splice(recipes.indexOf(recipe), 1);
     res.send(200, "deleted");
   } else {

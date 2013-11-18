@@ -3,10 +3,29 @@
 //////////////////////////
 
 angular.module("cookbook").factory("Recipe", function($resource) {
-  var recipes = $resource('/recipes/:id', { id: '@id' }, {
-    all: { method:'GET', isArray: true },
-    find: { method:'GET' }
+  var recipesResource = $resource('/recipes/:id', { id: '@id' });
+  var recipesArr = []
+  angular.extend(recipesResource, {
+    all: function(){
+      recipesResource.query(this.add)
+      return recipesArr;
+    },
+
+    add: function(recipes){
+      angular.forEach(recipes, function(recipe){
+        recipesArr.push(recipe)
+      });
+    },
+
+    find: function(options){
+      return this.get(options)
+    },
+
+    create: function(recipe){
+      recipesArr.push(recipe);
+      return recipe.$save();
+    }
   });
 
-  return recipes
+  return recipesResource
 });

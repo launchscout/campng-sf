@@ -30,3 +30,37 @@ describe("RecipeDetailCtrl", function() {
     });
   });
 });
+
+describe("RecipeNewCtrl", function() {
+  beforeEach(inject(function($controller) {
+    this.scope = {}
+    this.controller = $controller("RecipeNewCtrl", {$scope: this.scope})
+  }));
+
+  describe("submit", function() {
+    it("posts the recipe to /recipes", inject(function($httpBackend) {
+      $httpBackend.expect('POST', '/recipes', {ingredients: [], title: "Test"}).respond("cool")
+      this.scope.currentRecipe.title = "Test"
+      this.scope.submit()
+      $httpBackend.flush()
+    }));
+  });
+
+  describe("addIngredient", function() {
+    it("adds an ingredient", function() {
+      var newIngredient = {title: "Sugar"};
+      this.scope.addIngredient(newIngredient);
+      expect(this.scope.currentRecipe.ingredients.length).toEqual(1);
+      expect(this.scope.currentRecipe.ingredients[0].title).toEqual("Sugar");
+    });
+  });
+
+  describe("removeIngredient", function() {
+    it("removes an ingredient", function() {
+      testIngredients = [{title: "Sugar"}, {title: "Water"}];
+      this.scope.currentRecipe.ingredients = testIngredients
+      this.scope.removeIngredient(testIngredients[0]);
+      expect(this.scope.currentRecipe.ingredients).toEqual([{title: "Water"}]);
+    });
+  });
+});
